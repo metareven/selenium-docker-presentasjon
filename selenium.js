@@ -7,7 +7,7 @@ async function runTest(browsername, url){
     .build();
 	try{
 		await driver.get(url)
-		//await driver.sleep(5000)
+		await driver.sleep(5000)
 	} finally {
 		await driver.quit()
 	}
