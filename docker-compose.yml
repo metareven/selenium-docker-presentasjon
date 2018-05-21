@@ -1,12 +1,12 @@
 version: "3"
 services:
   selenium-hub:
-    image: selenium/hub:latest
+    image: selenium/hub:3.12
     container_name: selenium-hub
     ports:
       - "4444:4444"
-  chrome:
-    image: selenium/node-chrome-debug:latest
+  chrome_1:
+    image: selenium/node-chrome-debug:3.12
     depends_on:
       - selenium-hub
     environment:
@@ -14,8 +14,8 @@ services:
       - HUB_PORT=4444
     ports:
       - "5900:5900"
-  firefox:
-    image: selenium/node-firefox-debug:latest
+  firefox_1:
+    image: selenium/node-firefox-debug:3.12
     depends_on:
       - selenium-hub
     environment:
@@ -23,6 +23,42 @@ services:
       - HUB_PORT=4444
     ports:
       - "5901:5900"
+  chrome_2:
+    image: selenium/node-chrome-debug:3.12
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    ports:
+      - "5902:5900"
+  firefox_2:
+    image: selenium/node-firefox-debug:3.12
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    ports:
+      - "5903:5900"
+  chrome_3:
+    image: selenium/node-chrome-debug:3.12
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    ports:
+      - "5904:5900"
+  firefox_3:
+    image: selenium/node-firefox-debug:3.12
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    ports:
+      - "5905:5900"
   novnc:
     image: psharkey/novnc:latest
     ports:

@@ -1,0 +1,22 @@
+{
+  "name": "selenium-docker-presentasjon",
+  "version": "1.0.0",
+  "description": "Presentation about using docker to make your own private cloud of selenium nodes",
+  "main": "selenium.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metareven/selenium-docker-presentasjon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metareven/selenium-docker-presentasjon/issues"
+  },
+  "homepage": "https://github.com/metareven/selenium-docker-presentasjon#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
