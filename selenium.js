@@ -6,8 +6,13 @@ async function runTest(browsername, url){
     .usingServer('http://localhost:4444/wd/hub')
     .build();
 	try{
+		await driver.manage().setTimeouts({implicit:5000})
 		await driver.get(url)
 		await driver.sleep(5000)
+		await driver.get('http://www.google.com')
+		await driver.findElement(By.css('#lst-ib')).sendKeys('do a barrel roll', Key.ENTER)
+		await driver.sleep(5000)
+		
 	} finally {
 		await driver.quit()
 	}
@@ -28,3 +33,4 @@ for(const browser of browsers){
 Promise.all(promises)
 .then(() => console.log("that's all folks!"))
 .catch(() => console.log("that's all folks!"))
+
